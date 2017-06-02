@@ -1,0 +1,31 @@
+.footer {
+    font-family:Raleway;
+    font-variant: normal;
+    height:24px;
+    width: 100%;
+    background-attachment: scroll;
+    background-position: 0% 0%;
+    position: fixed;
+    bottom: 0pt;
+    left: 5pt;
+}
+
+.time {
+    position:absolute;
+    bottom:0;
+    right:0;
+    margin-right:5px;
+}
+
+#timeParagraph {
+    font-family:Raleway;
+    font-variant: normal;
+    margin-right: 35px;
+}
+
+
+#logo {
+    width: 198px;
+    height: 80px;
+    border-radius: 15px;
+}

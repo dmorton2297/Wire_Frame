@@ -1,0 +1,39 @@
+#ul0 {
+    margin-top:8px;
+    margin-right: 5px;
+    margin-left: 5px;
+}
+
+
+h1 {
+    margin-left: 10px;
+    font-family:Raleway;
+    font-variant: normal;
+}
+
+h3 {
+    margin-left: 10px;
+    font-family:Raleway;
+    font-variant: normal;
+}
+
+td{
+    margin-left: 10px;
+    font-family:Raleway;
+    font-variant: normal;
+    font-weight:300;
+}
+
+tr{
+    margin-left: 10px;
+    font-family:Raleway;
+    font-variant: normal;
+}
+
+hr {
+    width:98%;
+    margin-top: 0px;
+}
+
+
+
