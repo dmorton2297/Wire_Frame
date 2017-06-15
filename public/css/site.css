@@ -1,7 +1,16 @@
-
-
 #grid_cell {
     margin-top: 10px;
     border-radius: 15px;
     margin: 20px;
+}
+
+#grid_button {
+	float: right;
+	margin-right: 20px;
+	margin-top: 0px;
+	position: relative;
+}
+
+#machine_table {
+	margin: 20px;
 }

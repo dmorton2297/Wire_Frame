@@ -45,6 +45,7 @@
                 <span class="icon-bar"></span>
             </button>
             <a class="navbar-left" href="/"><img src="{{ asset('img/logo.png') }}" id="logo"></a>
+                @yield('title')
         </div>
         <div class="collapse navbar-right navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav">

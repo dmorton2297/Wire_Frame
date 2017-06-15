@@ -1,4 +1,8 @@
 @extends('master')
+@section('title')
+    <h1 class="navbar-text">Company Overview</h1>
+@stop
+
 @section('content')
 <h1 class="header" style="font: Raleway">Locations</h1>
 
@@ -19,7 +23,7 @@
             <td>Hanover Park</td>
             <td>6325 Muirfield Drive Hanover Park, IL 60133 USA</td>
             <td>85%</td>
-            <td><a href="test"><button class="btn btn-default">View site</button></a></td>
+            <td><a href="sitegrid"><button class="btn btn-default">View site</button></a></td>
         </tr>
         <tr>
             <td>Chicago</td>

@@ -1,5 +1,7 @@
 @extends('master')
-
+@section('title')
+    <h1 class="navbar-text">Hanover Park</h1>
+@stop
 @section('head')
 <script src="http://canvasjs.com/assets/script/canvasjs.min.js"></script>
 <script type="text/javascript">
@@ -65,11 +67,6 @@
         }
     }
 </script>
-
-
-
-
-
 @stop
 
 @section('content')
@@ -80,7 +77,7 @@
         <h1 id="dashboardLabel"><strong>Machine Dashboard</strong></h1>
     </div>
     <div class="col-sm-6">
-       <button class="btn btn-default" id="listViewButton">List View</button>
+       <a href="site"><button class="btn btn-default" id="listViewButton">List View</button></a>
     </div>
 
     <hr>

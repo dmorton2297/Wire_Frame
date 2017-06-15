@@ -15,13 +15,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/site', function() {
-   return view('site');
-});
+Route::get('/site', 'DataController@renderSiteView');
 
-Route::get('/sitegrid', function() {
-   return view('sitegrid');
-});
 
-Route::get('/test', 'DataController@retrieveData');
+Route::get('/sitegrid', 'DataController@renderSiteGridView');
 

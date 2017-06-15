@@ -29,3 +29,7 @@
     height: 80px;
     border-radius: 15px;
 }
+
+.navbar-text {
+    margin-top: 25px;
+}
