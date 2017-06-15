@@ -14,8 +14,10 @@
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
-    <!-- jQuery library -->
+        <!-- jQuery library -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <script type="text/javascript" src="canvasjs.min.js"></script>
 
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -23,8 +25,12 @@
     <link rel = "stylesheet"  type = "text/css"  href = "{{ asset('css/master.css') }}" />
     <link rel = "stylesheet"  type = "text/css"  href = "{{ asset('css/home.css') }}" />
     <link rel = "stylesheet"  type = "text/css"  href = "{{ asset('css/site.css') }}" />
+    <link rel = "stylesheet"  type = "text/css"  href = "{{ asset('css/sitegrid.css') }}" />
 
-    @yield('dependencies')
+    
+
+    @yield('head')
+
 
 </head>
 

@@ -1,0 +1,28 @@
+.col-sm-3 {
+	background-color: #f9fbff;
+	border: 1px solid #abacad;
+	border-radius: 10px;
+}
+
+#center {
+	text-align: center;
+}
+
+.graph {
+	width: 150px;
+	height: 150px;
+	margin-bottom: 50px;
+	margin: auto;
+}
+
+.table {
+	margin-bottom: 0px;
+}
+
+#detailButton {
+	margin:auto;
+	margin-bottom: 5px;
+}
+
+
+

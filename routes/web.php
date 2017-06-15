@@ -23,3 +23,5 @@ Route::get('/sitegrid', function() {
    return view('sitegrid');
 });
 
+Route::get('/test', 'DataController@retrieveData');
+
