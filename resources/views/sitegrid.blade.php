@@ -4,9 +4,6 @@
 <script src="http://canvasjs.com/assets/script/canvasjs.min.js"></script>
 <script type="text/javascript">
 
-    function modalClicked(index) {
-        alert("Hello!"+index);
-    }
     <?php $counter = 0; ?>
     window.onload = function () {
         var ws = <?php echo json_encode($assets); ?>;
@@ -22,6 +19,7 @@
             var id = "chartContainer"+i;
             var chart = new CanvasJS.Chart(id, {
                 animationEnabled: false,
+                backgroundColor: "transparent",
                 title:{
                     text: info[i - 1].name         
                 },
@@ -39,24 +37,30 @@
                 });
 
             document.getElementById("Counts"+i).innerHTML = info[i-1].counts;
-            document.getElementById("Status"+i).innerHTML = info[i-1].status;
+            document.getElementById("Status"+i).innerHTML = "<strong>"+info[i-1].status+"</strong>";
 
             if (info[i-1].status != "IDLE") {
-                //document.getElementById("cell"+i).style.border = "3px solid #31d315";
+                document.getElementById("Status"+i).style.color = "green";
             } else {
-                document.getElementById("cell"+i).style.backgroundColor= "#f4bf42";
+                document.getElementById("cell"+i).style.backgroundColor= "#f9ff8c";
+                document.getElementById("Status"+i).style.color = "red";
             }
             chart.render();
-            setTimeout("location.reload(true);", 30000);
-
+          //  setTimeout("location.reload(true);", 30000);
                 document.getElementById(i).addEventListener("click", function(e) {
                     var sender = e.target || e.srcElement;
                     var id = sender.id;
                     var index = parseInt(id);
 
-                    document.getElementById("modalName").innerHTML = info[index - 1].name;
+                    document.getElementById("modalName").innerHTML = "<strong>"+info[index - 1].name+"</strong>";
                     document.getElementById("modalCounts").innerHTML = info[index - 1].counts;
-                    document.getElementById("modalStatus").innerHTML = info[index - 1].status;
+                    document.getElementById("modalStatus").innerHTML = "<strong>"+info[index - 1].status+"</strong>";
+                    if (info[index-1].status == "IN USE") {
+                        document.getElementById("modalStatus").style.color = "green";
+                    } else {
+                        document.getElementById("modalStatus").style.color = "red";
+                    }
+
                 });
         }
     }
@@ -71,6 +75,16 @@
 @section('content')
    <!-- <div id="chartContainer4" style="width: 300px; height: 300px;""></div>
     <div id="chartContainer3" style="width: 300px; height: 300px;"></div>-->
+    <div class="row">
+    <div class="col-sm-6" style="background-color: transparent; border: none;">
+        <h1 id="dashboardLabel"><strong>Machine Dashboard</strong></h1>
+    </div>
+    <div class="col-sm-6">
+       <button class="btn btn-default" id="listViewButton">List View</button>
+    </div>
+
+    <hr>
+    </div>
     <div class="row">
         <?php for($i = count($assets); $i > 0; $i = $i - 1) : ?>
            <?php $divId = 'chartContainer'.$i; ?>
@@ -87,6 +101,10 @@
                     </thead>
                     <tbody>
                     <tr>
+                        <td>Status</td>
+                        <td id="Status<?php echo $i;?>"></td>
+                    </tr>
+                    <tr>
                         <td>Utilization Rate</td>
                         <td>83%</td>
                     </tr>
@@ -98,14 +116,11 @@
                         <td>Counts</td>
                         <td id="Counts<?php echo $i;?>"></td>
                     </tr>
-                    <tr>
-                        <td>Status</td>
-                        <td id="Status<?php echo $i;?>"></td>
-                    </tr>
                     </tbody>
                 </table>
                 <div id="center">
-                    <button type="button" class="btn btn-default btn-md" data-toggle="modal" data-target="#myModal" id="<?php echo $i;?>">View Detail</button>   
+                    <button type="button" class="btn btn-primary btn-md" data-toggle="modal" data-target="#myModal" id="<?php echo $i;?>"
+                    style="margin-bottom: 5px;">View Detail</button>   
                 </div>
            </div>
         <?php endfor; ?>
@@ -158,7 +173,7 @@
             </table>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
       </div>
     </div>
 
