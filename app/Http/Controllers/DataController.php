@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use RecursiveIteratorIterator;
 use RecursiveArrayIterator;
 use App\Asset;
+use App\Location;
 
 class DataController extends Controller
 {
@@ -70,4 +71,94 @@ class DataController extends Controller
 
          return view('site', ['assets' => $assets]);
     }
+
+    public function renderLocationGrid() {
+        $locations = array();
+        $locationOne = new Location();
+        $locationTwo = new Location();
+        $locationThree = new Location();
+        $locationFour = new Location();
+        $locationFive = new Location();
+        $locationSix = new Location();
+
+        $locationOne -> setName('Hanover Park');
+        $locationTwo -> setName('Gurnee');
+        $locationThree -> setName('Chicago');
+        $locationFour -> setName('Mount Pleasent ');
+        $locationFive -> setName('Memphis');
+        $locationSix -> setName('Atlanta');
+
+        $locationOne -> setAddress('6325 Muirfield Drive Hanover Park, IL 60133');
+        $locationTwo -> setAddress('955 Tri-State Parkway Gurnee, IL 60031 USA');
+        $locationThree -> setAddress('1333 North Kingsbury Suite 302 Chicago, IL 60642 USA');
+        $locationFour -> setAddress('400 N. Harvey Road Mount Pleasant, IA 52641 USA');
+        $locationFive -> setAddress('5238 Lamar Avenue Memphis, TN 38118 USA USA');
+        $locationSix -> setAddress('3791 Browns Mill Road Atlanta, GA 30354 USA');
+
+        $locationOne -> setUtilRate(72);
+        $locationTwo -> setUtilRate(92);
+        $locationThree -> setUtilRate(91);
+        $locationFour -> setUtilRate(88);
+        $locationFive -> setUtilRate(77);
+        $locationSix -> setUtilRate(80);
+
+        array_push($locations, $locationOne, $locationTwo, $locationThree, $locationFour, $locationFive, $locationSix);
+
+        return view('locationgrid', ['locations' => $locations]);
+        
+    }
+
+    public function renderCompanyStatsView() {
+        $locations = array();
+        $locationOne = new Location();
+        $locationTwo = new Location();
+        $locationThree = new Location();
+        $locationFour = new Location();
+        $locationFive = new Location();
+        $locationSix = new Location();
+
+        $locationOne -> setName('Hanover Park');
+        $locationTwo -> setName('Gurnee');
+        $locationThree -> setName('Chicago');
+        $locationFour -> setName('Mount Pleasent ');
+        $locationFive -> setName('Memphis');
+        $locationSix -> setName('Atlanta');
+
+        $locationOne -> setAddress('6325 Muirfield Drive Hanover Park, IL 60133');
+        $locationTwo -> setAddress('955 Tri-State Parkway Gurnee, IL 60031 USA');
+        $locationThree -> setAddress('1333 North Kingsbury Suite 302 Chicago, IL 60642 USA');
+        $locationFour -> setAddress('400 N. Harvey Road Mount Pleasant, IA 52641 USA');
+        $locationFive -> setAddress('5238 Lamar Avenue Memphis, TN 38118 USA USA');
+        $locationSix -> setAddress('3791 Browns Mill Road Atlanta, GA 30354 USA');
+
+        $locationOne -> setUtilRate(72);
+        $locationTwo -> setUtilRate(92);
+        $locationThree -> setUtilRate(91);
+        $locationFour -> setUtilRate(88);
+        $locationFive -> setUtilRate(77);
+        $locationSix -> setUtilRate(80);
+
+        array_push($locations, $locationOne, $locationTwo, $locationThree, $locationFour, $locationFive, $locationSix);
+        return view('companystats', ['locations' => $locations]);
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

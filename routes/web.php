@@ -20,3 +20,7 @@ Route::get('/site', 'DataController@renderSiteView');
 
 Route::get('/sitegrid', 'DataController@renderSiteGridView');
 
+Route::get('/locationgrid', 'DataController@renderLocationGrid');
+
+Route::get('/comstats', 'DataController@renderCompanyStatsView');
+
